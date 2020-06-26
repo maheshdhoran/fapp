@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+
+    <title>Welcome to Prediction</title>
+
+    <style type="text/css">
+      html,body{
+        height: 100%
+        }
+      body{
+          /*background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);*/
+          background-image: url('https://www.hdcarwallpapers.com/walls/2019_bugatti_divo_4k-HD.jpg');
+          /* Full height */
+          height: 100%;
+
+          /* Center and scale the image nicely */
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+    </style>
+
+  </head>
+  <body>
+      <div class="container">
+        <div class="text-center">
+          <h1 class="display-4 mt-5" style="font-size: 2rem; color: white;">Car buying prediction using ML</h1>
+          <small class="text-muted" style="color: white !important;">Code by Pratish Varma & Mahesh Dhoran</small>
+        </div>
+      </div>
+      <div class="container" style="margin-top:5%">
+
+
+        <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('predict')}}"  method="POST" class="animate__animated animate__fadeIn">
+          
+          <div class="form-group">
+            <label style="color:white">Enter your Age</label>
+            <input type="text" name="age" value="{{ age }}" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label style="color:white">Enter your monthly Salary</label>
+            <input type="text" name="salary" value="{{ salary }}" class="form-control" required>
+          </div>
+
+          <button type="submit" class="btn btn-success">Predict</button>
+          <button class="btn btn-danger ml-1"><a href="{{ url_for('index') }}" style="text-decoration: none; color:white;">Refresh</a></button>
+        </form>
+
+        <!-- Main Input For Receiving Query to our ML --> 
+
+        {% if connect ==  5 %}
+        <div class="card text-center mt-5 animate__animated animate__flipInX animate__slower">
+            <div class="card-header">
+              Results
+            </div>
+            <div class="card-body" style="background-color:white;">
+
+          <!-- Main ML Prediction Display Here -->
+              {% if result ==  0 %}
+                     <p class="card-text">
+                                <div class="alert alert-primary" role="alert">
+                                    You will not buy a car
+                                </div>
+                     </p>
+               {% else %}
+                     <p class="card-text">
+                                <div class="alert alert-primary" role="alert">
+                                    You will buy a car
+                                </div>
+                      </p>
+              {% endif %}
+            </div>
+
+          <!-- Main ML Prediction Display Ends Here -->
+           </div>
+          {% endif %}
+
+      </div>
+
+  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
