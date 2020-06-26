@@ -47,12 +47,12 @@
           
           <div class="form-group">
             <label style="color:white">Enter your Age</label>
-            <input type="text" name="age" value="{{ age }}" class="form-control" required>
+            <input type="text" name="age" pattern="[1-9]{1}[0-9]{0,2}" value="{{ age }}" class="form-control" required>
           </div>
 
           <div class="form-group">
             <label style="color:white">Enter your monthly Salary</label>
-            <input type="text" name="salary" value="{{ salary }}" class="form-control" required>
+            <input type="text" name="salary" pattern="[1-9]{1}[0-9]{0,}" value="{{ salary }}" class="form-control" required>
           </div>
 
           <button type="submit" class="btn btn-success">Predict</button>
