@@ -51,7 +51,9 @@ def predict():
 	cm = confusion_matrix(y_test, y_pred)
 
 	# opening a pickle file for the classifier
-	classifier2 = pickle.load(open('models/model1.pkl','rb'))
+	pickle.dump(classifier,open('models/model2.pkl','wb'))
+	
+	classifier2 = pickle.load(open('models/model2.pkl','rb'))
 
 
 	if request.method == 'POST':
