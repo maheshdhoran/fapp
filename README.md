@@ -6,7 +6,7 @@ Demo :- https://carpredict.herokuapp.com/
 
 click the above link and check the live demo
 
-![Screen-Shot](https://github.com/maheshdhoran/fapp/tree/master/data/ss.png)
+![Screen-Shot](data/ss.png)
 
 # Motivation
 
