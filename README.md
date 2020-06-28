@@ -6,6 +6,8 @@ Demo :- https://carpredict.herokuapp.com/
 
 click the above link and check the live demo
 
+![Image of Project](https://github.com/maheshdhoran/fapp/data/ss.png)
+
 # Motivation
 
 To understand the concept behind the deployment of model using flask and heroku
